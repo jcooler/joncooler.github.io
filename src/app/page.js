@@ -13,7 +13,7 @@ import { useState } from "react";
 
  
 export default function Home() {
-
+ 
 let slides = [
   "./public/image1.png",
   "./public/image2.png",
