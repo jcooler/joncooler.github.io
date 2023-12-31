@@ -1,113 +1,149 @@
-import Image from 'next/image'
+"use client";
+
+import {BsFillMoonStarsFill} from 'react-icons/bs';
+import {AiFillLinkedin, AiFillMail, AiFillGithub} from 'react-icons/ai';
+import Carousel from './components/Carousel';
+import Image from "next/image";
+import jon from "/public/AvatarMaker.png";
+import about from "/public/about.png";
+import code from "/public/code.png";
+import design from "/public/design.png";
+import "./pages.css"
+import { useState } from "react";
+
 
 export default function Home() {
+
+let slides = [
+  "./public/image1.png",
+  "./public/image2.png",
+  "./public/image3.png",
+  "./public/image4.png",
+]
+const [darkMode, setDarkMode] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+<div className={darkMode ? "dark" : ""}>
+  
+  <head>
+    <title>Jon Cooler | Front-End Developer</title>
+    <meta name="description" content="" />
+    <link rel="icon" href="joncooler.github.io\public\favicon.ico" />
+  </head>
+
+    <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
+      <section className="min-h-screen">
+        <nav className="py-10 mb-12 flex justify-between">
+          <h1 className="text-xl dark:text-teal-700">Jon Cooler</h1>
+          <ul className="flex items-center">
+            <li>
+              <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-teal-700" />
+            </li>
+            <li>
+              <a 
+              className="bg-gradient-to-r from-cyan-500 to-teal-600 bg-cyan-500 text-white px-4 py-2 rounded-md ml-8 select-none"
+              href="https://drive.google.com/file/d/1aAd8cVwscd2LlmsjbUUDtoxMCOa-RNNp/view?usp=sharing"
+              target="_blank">
+              Resume
+                </a>
+            </li>
+          </ul>
+        </nav>
+        <div className="text-center p-10">
+          <h2 className="text-5xl py-2 font-medium md:text-6xl text-teal-700">Jon Cooler</h2>
+          <h3 className="text-2xl py-2 md:text-3xl dark:text-teal-700">Front-end Developer.</h3>
+          <p className="text-md py-5 leading-8 text-gray-700 md:text-xl max-w-2xl mx-auto dark:text-teal-700">
+          Enthusiastic Front-End Developer eager to contribute to team success through collaboration, hard work, attention to detail
+          and excellent organizational skills. Proficient in utilizing HTML5, CSS3, JavaScript, and multiple libraries and frameworks to create dynamic and engaging user interfaces.
+          </p>
+        </div>
+        <div className="text-5xl flex justify-center gap-8 py-3 text-gray-600">
+          <a href="https://www.linkedin.com/in/joncooler/" target="_blank" >
+        <AiFillLinkedin alt="LinkedIn" className="dark:text-teal-700" />
+        </a>
+        <a href="https://github.com/jcooler" className="dark:text-teal-700" target="_blank" >
+        <AiFillGithub alt="GitHub" />
+        </a>
+        <a href="mailto:jonathan.r.cooler@gmail.com" className="dark:text-teal-700" target="_blank" >
+        <AiFillMail alt="Mail"/>
+        </a>
+        </div>
+        <div className="relative mx-auto bg-gradient-to-b from-teal-700 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
+        <Image src={jon} alt="me" layout="fill" objectFit="cover" />
+        </div>
+      </section>
+      
+      <section>
+      <div className="lg:flex gap-10 content-start">
+        <div className="text-center shadow-lg p-10 rounded-xl my-10 basis-1/3 dark:shadow-teal-700">
+            <Image src={about} alt="silhouette" width={100} height={100} />
+          <h3 className="text-3xl py-1 text-teal-700">
+            About
+          </h3>
+          <p className="text-md py-5 leading-8 text-gray-800 md:text-x dark:text-teal-800">
+          Hey! I'm Jon, nice to meet you. My web journey began all the way back in 2003 when I was 11-years old and learned about Xanga. Xanga was a social media site
+          that was very similar to myspace. I began to search for and implement new backgrounds and layouts for both of these sites, but there was always something I
+          didn't like about the background, or the design. I remember slowly deleting lines of code and refreshing the page to see what it did. Soon, I began to add lines of code
+          to see what happened. I was fascinated. This got me interested in trying to make my own layouts and backgrounds to have the best page.
+          Eventually, I got a lot of compliments from my fellow students in High School and a lot of my friends and other students wanted me to help them with their pages.
+          I "developed" dozens of pages by creating custom backgrounds with Photoshop and illustrator,hosted the images on Photobucket, and added or subtracted various 
+          things from the pages to give each "client" a handcrafted experience. Since then, I have used various languages, frameworks, and libraries to achieve the exact same thing!
+          </p>
+        </div>
+        <div className="text-center shadow-lg p-10 rounded-xl my-10 basis-1/3 dark:shadow-teal-700">
+          <Image src={code} alt="code" width={100} height={100} />
+          <h3 className="text-3xl py-1 text-teal-700">
+            Experience
+          </h3>
+          <p className="text-md py-5 leading-8 text-gray-800 md:text-xl dark:text-teal-800">
+          I have been using HTML and CSS for over 20 years. I began using JavaScript in college over 6 years ago. Currently, I am using various libraries and frameworks to build dynamic, engaging, and accessible user interfaces.
+          </p>
+          <h4 className="py-4 text-teal-700 md:text-xl"> Skills:</h4>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> HTML5 </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> CSS3 </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> JavaScript </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> React </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Bootstrap </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Tailwind </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Responsive Design </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Version Control/Git </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Cross-Browser Compatibility </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Accessibility </p>
+        </div>
+        <div className="text-center shadow-lg p-10 rounded-xl my-10 basis-1/3 dark:shadow-teal-700">
+            <Image src={design} alt="design logo" width={100} height={100} />
+          <h3 className="text-3xl py-1 text-teal-700">
+            Tools
+          </h3>
+          <p className="text-md py-5 leading-8 text-gray-800 md:text-xl dark:text-teal-800">
+          When I started writing code, there weren't many tools available to help me achieve my goals. Over the years as technology improved, many of these tools became available, and I find myself using them daily.
+          There are many tools that I use on a daily basis, and I am frequently finding and using new ones! 
+          </p>
+          <h4 className="py-4 text-teal-700 md:text-xl"> Development tools that I use:</h4>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Visual Studio Code </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Git / GitHub / Bitbucket </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Node Package Manager </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Browser DevTools </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Lighthouse </p>
+          <p className="text-gray-800 py-1 md:text-xl dark:text-teal-800"> Slack / Teams / Jira / confluence </p>
+        </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h3 className="text-3xl py-1 text-teal-700 text-center">
+            Projects
+          </h3>
+        </div>
+        <div className="shadow-lg dark:shadow-teal-700 w-[60%] m-auto">
+          <Carousel slides={slides} />
+        </div>
+        <div className="mt-10 ">
+        <a href="https://github.com/jcooler?tab=repositories" target="_blank">
+          <p className="text-md text-center text-teal-700 dark:text-teal-800 pt-2 pb-5">View on GitHub</p>
           </a>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
     </main>
-  )
-}
+</div>
+  );
+};
