@@ -1,8 +1,8 @@
 "use client";
 
 import {BsFillMoonStarsFill} from 'react-icons/bs';
-import { FaLinkedinIn } from "react-icons/fa6";
-import { GrGithub } from "react-icons/gr";
+import { FaLinkedinIn } from "react-icons/fa";
+import { PiGithubLogoFill } from "react-icons/pi";
 import { IoMdMail } from "react-icons/io";
 import Carousel from './components/Carousel';
 import Image from "next/image";
@@ -58,7 +58,17 @@ const [darkMode, setDarkMode] = useState(false);
           and excellent organizational skills. Proficient in utilizing HTML5, CSS3, JavaScript, and multiple libraries and frameworks to create dynamic and engaging user interfaces.
           </p>
         </div>
-       
+        <div className="text-5xl flex justify-center gap-8 py-3 text-gray-600">
+          <a href="https://www.linkedin.com/in/joncooler/" target="_blank" >
+        <FaLinkedinIn alt="LinkedIn" className="dark:text-teal-700" />
+        </a>
+        <a href="https://github.com/jcooler" className="dark:text-teal-700" target="_blank" >
+        <PiGithubLogoFill  alt="GitHub" />
+        </a>
+        <a href="mailto:jonathan.r.cooler@gmail.com" className="dark:text-teal-700" target="_blank" >
+        <IoMdMail alt="Mail"/>
+        </a>
+        </div>
         <div className="relative mx-auto bg-gradient-to-b from-teal-700 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
         <Image src={jon} alt="me" layout="fill" objectFit="cover" />
         </div>
