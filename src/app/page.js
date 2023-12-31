@@ -10,7 +10,7 @@ import design from "/public/design.png";
 import "./pages.css"
 import { useState } from "react";
 
- 
+  
 export default function Home() {
  
 let slides = [
