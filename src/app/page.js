@@ -34,9 +34,7 @@ const [darkMode, setDarkMode] = useState(false);
         <nav className="py-10 mb-12 flex justify-between">
           <h1 className="text-xl dark:text-teal-700">Jon Cooler</h1>
           <ul className="flex items-center">
-            <li>
-              <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-teal-700" />
-            </li>
+            
             <li>
               <a 
               className="bg-gradient-to-r from-cyan-500 to-teal-600 bg-cyan-500 text-white px-4 py-2 rounded-md ml-8 select-none"
@@ -55,7 +53,12 @@ const [darkMode, setDarkMode] = useState(false);
           and excellent organizational skills. Proficient in utilizing HTML5, CSS3, JavaScript, and multiple libraries and frameworks to create dynamic and engaging user interfaces.
           </p>
         </div>
-        
+        <div className="text-5xl flex justify-center gap-8 py-3 text-gray-600">
+          
+        <div className="relative mx-auto bg-gradient-to-b from-teal-700 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
+        <Image src={jon} alt="me" layout="fill" objectFit="cover" />
+        </div>
+        </div>
       </section>
       
       <section>
