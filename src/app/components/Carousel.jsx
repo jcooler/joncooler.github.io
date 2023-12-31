@@ -1,8 +1,5 @@
 import { useState } from "react";
-import {
-  BsFillArrowRightCircleFill,
-  BsFillArrowLeftCircleFill,
-} from "react-icons/bs";
+
 
 export default function Carousel({ slides }) {
   let [current, setCurrent] = useState(0);
@@ -31,12 +28,7 @@ export default function Carousel({ slides }) {
       </div>
 
       <div className="absolute top-0 h-full w-full justify-between items-center flex text-white px-10 text-3xl">
-        <button onClick={previousSlide}>
-          <BsFillArrowLeftCircleFill />
-        </button>
-        <button onClick={nextSlide}>
-          <BsFillArrowRightCircleFill />
-        </button>
+       
       </div>
 
       <div className="absolute bottom-0 py-4 flex justify-center gap-3 w-full">
